@@ -14,6 +14,7 @@ using System.Collections;
 public class DragEvent : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler {
 
 	int gridID = 0;  // 格子编号
+	public static int lastID;
 
 	string debugStr = "";
 
@@ -24,6 +25,7 @@ public class DragEvent : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHa
     // 开始拖拽
 	public void OnBeginDrag (PointerEventData eventData) {
 		Info.debugStr = "OnBeginDrag:" + gridID;
+		lastID = gridID;
         // 调用交换方法
 		PickUpDrop.SwapItem(gridID);
 	}
@@ -36,7 +38,7 @@ public class DragEvent : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHa
     
     // 结束拖拽
 	public void OnEndDrag (PointerEventData eventData) {
-		Info.debugStr = "OnEndDrag:" + gridID;
+		// Info.debugStr = "OnEndDrag:" + gridID;
         // 调用交换方法
 		PickUpDrop.SwapItem(gridID);
 	}

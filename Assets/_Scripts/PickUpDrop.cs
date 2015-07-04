@@ -39,7 +39,10 @@ public class PickUpDrop : MonoBehaviour, IDropHandler {
 
     // 当物品放在格子中时（拖拽触发模式）
 	public void OnDrop (PointerEventData eventData) {
-		SwapItem(gridID);
+		Info.debugStr = "OnDrop: " +  gridID;
+		if (gridID != DragEvent.lastID) {
+			SwapItem(gridID);
+		}
 	}
 
 }
