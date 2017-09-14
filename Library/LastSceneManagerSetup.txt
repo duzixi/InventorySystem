@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/MVC_UGUI_Bag.unity
+  isLoaded: 1
+  isActive: 1
